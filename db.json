@@ -9,13 +9,6 @@
   ],
   "records": [
     {
-      "id": "1",
-      "title": "The Battle of Los Angeles",
-      "artist": "Rage Against the Machine",
-      "price": 21.99,
-      "genre": "Alternative Rock"
-    },
-    {
       "id": "2",
       "title": "The Downward Spiral",
       "artist": "Nine Inch Nails",

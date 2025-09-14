@@ -8,6 +8,7 @@
   margin-bottom: 1.5rem;
   transition: transform 0.2s ease-in-out;
   color: #111; /* FIX: ensure text is visible on white background */
+  width: 240px;
 }
 
 .product-card:hover {
@@ -44,8 +45,17 @@
   padding: 0.4rem 0.75rem;
   cursor: pointer;
   border-radius: 4px;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .product-card button:hover {
   background-color: #222;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
