@@ -1,4 +1,8 @@
-// src/pages/Shop.jsx
+// This component is responsible for displaying the store's product catalog.
+// It fetches all records from the backend API, filters them based on a search term,
+// and renders each product using the ProductCard component.
+// It also handles updating product prices and deleting products using PATCH and DELETE requests respectively.
+
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import "./Shop.css";
@@ -8,6 +12,7 @@ function Shop() {
   const [records, setRecords] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Fetch all records from the backend when the component mounts
   useEffect(() => {
     fetch("http://localhost:3001/records")
       .then((res) => res.json())
@@ -15,12 +20,14 @@ function Shop() {
       .catch((err) => console.error("Error fetching records:", err));
   }, []);
 
+  // Updates a record in local state after a successful price update from the backend
   function handleUpdatedRecord(updated) {
     setRecords((prev) =>
       prev.map((r) => (r.id === updated.id ? updated : r))
     );
   }
 
+  // Deletes a record from the backend and removes it from local state upon success
   function handleDeleteRecord(id) {
     fetch(`http://localhost:3001/records/${id}`, {
       method: "DELETE"
@@ -32,8 +39,11 @@ function Shop() {
       .catch((err) => console.error("Error deleting record:", err));
   }
 
+  // Filters the list of records based on the user's search input
   const filteredRecords = useProductFilter(records, searchTerm);
 
+  // Render the page including a search bar and a grid of filtered product cards
+  // Pass callback props to each ProductCard for updating or deleting a record
   return (
   <div className="shop-container">
     <h1 className="shop-heading">Shop Our Records</h1>

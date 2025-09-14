@@ -2,9 +2,9 @@
   "store_info": [
     {
       "id": "1",
-      "name": "Vinyl Vault",
-      "description": "The go-to archive for classic records.",
-      "phone_number": "555-123-4567"
+      "name": "Flatiron's Vinyl Vault",
+      "description": "The Flatiron School's go-to archive for classic records.",
+      "phone_number": "Chris at Flatiron School"
     }
   ],
   "records": [
