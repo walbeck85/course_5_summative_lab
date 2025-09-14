@@ -1,7 +1,7 @@
-// src/components/RecordForm.jsx
 import { useState } from "react";
 
 function RecordForm() {
+  // useState hook to manage controlled form input values for a new record
   const [formData, setFormData] = useState({
     title: "",
     artist: "",
@@ -9,19 +9,23 @@ function RecordForm() {
     price: ""
   });
 
+  // Updates formData state when any input field changes
   function handleChange(e) {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   }
 
+  // Handles form submission: constructs new record, sends POST request, resets form
   function handleSubmit(e) {
     e.preventDefault();
     const newRecord = {
       ...formData,
+      // Convert price from string to float to ensure correct data type in backend
       price: parseFloat(formData.price)
     };
     console.log(newRecord);
 
+    // Send POST request to the backend to persist the new record
     fetch("http://localhost:3001/records", {
       method: "POST",
       headers: {
@@ -45,6 +49,7 @@ function RecordForm() {
       .catch((err) => console.error("Error adding record:", err));
   }
 
+  // Render form with controlled inputs for adding a new record
   return (
     <form onSubmit={handleSubmit}>
       <h2>Add a New Record</h2>
