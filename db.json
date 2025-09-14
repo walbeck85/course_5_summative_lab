@@ -49,6 +49,55 @@
       "artist": "Wu-Tang Clan",
       "genre": "Hip-Hop ",
       "price": 21.99
+    },
+    {
+      "id": "a8ad",
+      "title": "Test Title",
+      "artist": "Test Artist",
+      "genre": "Rock",
+      "price": 19.99
+    },
+    {
+      "id": "e2d6",
+      "title": "Test Title",
+      "artist": "Test Artist",
+      "genre": "Rock",
+      "price": 19.99
+    },
+    {
+      "id": "abbe",
+      "title": "Test Title",
+      "artist": "Test Artist",
+      "genre": "Rock",
+      "price": 19.99
+    },
+    {
+      "id": "74e9",
+      "title": "Test Title",
+      "artist": "Test Artist",
+      "genre": "Rock",
+      "price": 19.99
+    },
+    {
+      "id": "ad84",
+      "title": "Test Title",
+      "artist": "Test Artist",
+      "genre": "Rock",
+      "price": 19.99
+    },
+    {
+      "id": "54d9",
+      "title": "Test Title",
+      "artist": "Test Artist",
+      "genre": "Rock",
+      "price": 19.99
+    },
+    {
+      "id": "c953",
+      "title": "Test Title",
+      "artist": "Test Artist",
+      "genre": "Rock",
+      "price": 19.99
     }
   ]
 }
