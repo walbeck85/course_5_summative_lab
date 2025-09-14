@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function RecordForm() {
+function RecordForm({ onAddRecord }) {
   // useState hook to manage controlled form input values for a new record
   const [formData, setFormData] = useState({
     title: "",
@@ -23,7 +23,10 @@ function RecordForm() {
       // Convert price from string to float to ensure correct data type in backend
       price: parseFloat(formData.price)
     };
-    console.log(newRecord);
+
+    if (onAddRecord) {
+      onAddRecord(newRecord);
+    }
 
     // Send POST request to the backend to persist the new record
     fetch("http://localhost:3001/records", {
@@ -38,7 +41,7 @@ function RecordForm() {
         return res.json();
       })
       .then(() => {
-        alert("Record added successfully!");
+        // alert("Record added successfully!");
         setFormData({
           title: "",
           artist: "",
