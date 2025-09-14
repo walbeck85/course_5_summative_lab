@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./ProductCard.css";
 
-function ProductCard({ record, onPriceUpdate }) {
+function ProductCard({ record, onPriceUpdate, onDelete }) {
   const { id, title, artist, genre, price } = record;
   const [isEditing, setIsEditing] = useState(false);
   const [newPrice, setNewPrice] = useState(price);
@@ -36,30 +36,34 @@ function ProductCard({ record, onPriceUpdate }) {
   }
 
   return (
-    <div className="product-card">
-      <h2>{title}</h2>
-      <p><strong>Artist:</strong> {artist}</p>
-      <p><strong>Genre:</strong> {genre}</p>
+  <div className="product-card">
+    <h2>{title}</h2>
+    <p><strong>Artist:</strong> {artist}</p>
+    <p><strong>Genre:</strong> {genre}</p>
 
-      {isEditing ? (
-        <form onSubmit={handlePriceSubmit}>
-          <input
-            type="number"
-            step="0.01"
-            value={newPrice}
-            onChange={handlePriceChange}
-            style={{ width: "100px", marginRight: "8px" }}
-          />
-          <button type="submit">Save</button>
-        </form>
-      ) : (
-        <p>
-          <strong>Price:</strong> ${price.toFixed(2)}{" "}
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-        </p>
-      )}
-    </div>
-  );
+    {isEditing ? (
+      <form onSubmit={handlePriceSubmit}>
+        <input
+          type="number"
+          step="0.01"
+          value={newPrice}
+          onChange={handlePriceChange}
+          style={{ width: "100px", marginRight: "8px" }}
+        />
+        <button type="submit">Save</button>
+      </form>
+    ) : (
+      <p>
+        <strong>Price:</strong> ${price.toFixed(2)}{" "}
+        <button onClick={() => setIsEditing(true)}>Edit</button>
+      </p>
+    )}
+
+    <button onClick={() => onDelete(id)} style={{ marginTop: "0.5rem", background: "red", color: "white" }}>
+      Delete
+    </button>
+  </div>
+);
 }
 
 export default ProductCard;
