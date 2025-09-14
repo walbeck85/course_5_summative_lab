@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import "./Shop.css";
+import useProductFilter from "../hooks/useProductFilter";
 
 function Shop() {
   const [records, setRecords] = useState([]);
@@ -20,10 +21,18 @@ function Shop() {
     );
   }
 
-  const filteredRecords = records.filter((record) =>
-    record.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    record.artist.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  function handleDeleteRecord(id) {
+    fetch(`http://localhost:3001/records/${id}`, {
+      method: "DELETE"
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Delete failed");
+        setRecords((prev) => prev.filter((r) => r.id !== id));
+      })
+      .catch((err) => console.error("Error deleting record:", err));
+  }
+
+  const filteredRecords = useProductFilter(records, searchTerm);
 
   return (
   <div className="shop-container">
@@ -43,6 +52,7 @@ function Shop() {
           key={record.id}
           record={record}
           onPriceUpdate={handleUpdatedRecord}
+          onDelete={handleDeleteRecord}
         />
       ))}
     </div>
