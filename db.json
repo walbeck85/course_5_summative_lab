@@ -1,0 +1,61 @@
+{
+  "store_info": [
+    {
+      "id": "1",
+      "name": "Vinyl Vault",
+      "description": "The go-to archive for classic records.",
+      "phone_number": "555-123-4567"
+    }
+  ],
+  "records": [
+    {
+      "id": "1",
+      "title": "The Battle of Los Angeles",
+      "artist": "Rage Against the Machine",
+      "price": 21.99,
+      "genre": "Alternative Rock"
+    },
+    {
+      "id": "2",
+      "title": "The Downward Spiral",
+      "artist": "Nine Inch Nails",
+      "price": 19.99,
+      "genre": "Industrial Rock"
+    },
+    {
+      "id": "3",
+      "title": "Ready to Die",
+      "artist": "The Notorious B.I.G.",
+      "price": 19.99,
+      "genre": "Hip Hop"
+    },
+    {
+      "id": "4",
+      "title": "Hybrid Theory",
+      "artist": "Linkin Park",
+      "price": 18.99,
+      "genre": "Nu Metal"
+    },
+    {
+      "id": "5",
+      "title": "Mellon Collie and the Infinite Sadness",
+      "artist": "The Smashing Pumpkins",
+      "price": 24.99,
+      "genre": "Alternative Rock"
+    },
+    {
+      "id": "6",
+      "title": "Toxicity",
+      "artist": "System of a Down",
+      "genre": "Nu Metal",
+      "price": 20.99
+    },
+    {
+      "id": "82ae",
+      "title": "Enter the Wu-Tang (36 Chambers)",
+      "artist": "Wu-Tang Clan",
+      "genre": "Hip-Hop ",
+      "price": 21.99
+    }
+  ]
+}

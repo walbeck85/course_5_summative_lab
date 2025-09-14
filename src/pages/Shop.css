@@ -1,0 +1,34 @@
+/* src/pages/Shop.css */
+
+.shop-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shop-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.search-input {
+  display: block;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.no-results {
+  text-align: center;
+  margin-top: 2rem;
+  color: #888;
+}
